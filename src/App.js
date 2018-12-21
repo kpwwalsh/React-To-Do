@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ToDo from 'ToDo.js';
+import ToDo from '/Users/kylecarolina/bloc/my-app/src/components/ToDos.js';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +32,13 @@ class App extends Component {
     todo.isCompleted = todo.isCompleted ? false : true;
     this.setState({ todos: todos });
   }
+
+  handleDelete(index){
+    const todos = this.state.todos.slice();
+     console.log('handleDelete()', index, todos);
+     todos.splice(index, 1);
+     this.setState({todos});
+    }
   
   render(){
     return(
@@ -47,7 +54,7 @@ class App extends Component {
           />  
        )};
        </ul>
-       <form onSubmit= { (e) => this.onSubmit(e)} >/*why not empty parameter*/
+       <form onSubmit= { (e) => this.onSubmit(e)} > 
           <input type= "text" value={this.state.newTodoDescription} onChange={ (e)=> this.handleChange(e)}/>
           <input type= "submit" />
        </form>

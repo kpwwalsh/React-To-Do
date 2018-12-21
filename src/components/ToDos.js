@@ -1,4 +1,5 @@
-      class ToDo extends React.Component {
+import React, { Component } from 'react';      
+      class ToDo extends Component {
         render(){
           return (
            <li>
@@ -8,9 +9,10 @@
             onChange= { this.props.toggleComplete }
             />
             <span> {this.props.description}</span>
-            <button onClick={this.props.handleDelete}> Delete</button>
+            <button onClick={this.props.handleDelete}> Delete </button>
+           </li>
           );
          }
       }
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+export default ToDo;
