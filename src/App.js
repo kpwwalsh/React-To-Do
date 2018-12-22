@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ToDo from '/Users/kylecarolina/bloc/my-app/src/components/ToDos.js';
+import ToDo from './components/ToDos.js';
 
 class App extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class App extends Component {
           />  
        )};
        </ul>
-       <form onSubmit= { (e) => this.onSubmit(e)} > 
+       <form onSubmit= { (e) => this.handleSubmit(e)} > 
           <input type= "text" value={this.state.newTodoDescription} onChange={ (e)=> this.handleChange(e)}/>
           <input type= "submit" />
        </form>
